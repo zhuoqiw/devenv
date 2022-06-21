@@ -11,7 +11,7 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     git \
     && rm -rf /var/lib/apt/lists/*
 
-RUN git clone https://github.com/TheImagingSource/tiscamera.git
+RUN git clone -c http.sslverify=false https://github.com/TheImagingSource/tiscamera.git
 
 # Install TIS dependencies
 RUN sed -i 's?"sudo", "apt"?"apt-get"?g' tiscamera/scripts/dependency-manager \
