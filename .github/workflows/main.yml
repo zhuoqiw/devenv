@@ -2,8 +2,7 @@
 name: Build devenv
 
 # Controls when the workflow will run
-on:
-  workflow_dispatch:
+on: workflow_dispatch
 
 defaults:
   run:
