@@ -5,4 +5,5 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     build-essential \
     gdb \
     cmake \
+    python3.10-dev \
     && rm -rf /var/lib/apt/lists/*
