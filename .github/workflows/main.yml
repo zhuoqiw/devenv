@@ -32,6 +32,6 @@ jobs:
       UBUNTU_CODE: '20.04'
       UBUNTU_CODE_NAME: 'focal'
       PLATFORMS: ${{ inputs.PLATFORMS }}
-      IMAGE_NAME: ${{ github.repository }}
+      IMAGE_NAME: 'zhuoqiw/devenv'
       IMAGE_TAG: ${{ inputs.PLATFORMS }}
     secrets: inherit
