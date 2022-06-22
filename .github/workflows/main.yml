@@ -30,8 +30,7 @@ jobs:
     uses: zhuoqiw/docker-build-push/.github/workflows/main.yml@master
     with:
       UBUNTU_CODE: '20.04'
-      UBUNTU_CODE_NAME: 'focal'
       PLATFORMS: ${{ inputs.PLATFORMS }}
-      IMAGE_NAME: 'zhuoqiw/devenv'
+      IMAGE_NAME: ${{ github.repository }}
       IMAGE_TAG: ${{ inputs.PLATFORMS }}
     secrets: inherit
