@@ -22,6 +22,11 @@ on:
         - 'linux/amd64,linux/arm64'
         - 'linux/amd64'
         - 'linux/arm64'
+      IMAGE_TAG:
+        description: 'Image tag'
+        required: true
+        default: 'latest'
+        type: string
 
 # For more details, see https://github.com/docker/build-push-action
 jobs:
@@ -33,4 +38,13 @@ jobs:
       PLATFORMS: ${{ inputs.PLATFORMS }}
       IMAGE_NAME: ${{ github.repository }}
       IMAGE_TAG: ${{ inputs.PLATFORMS }}
+    secrets: inherit
+  build_jammy:
+    if: ${{ inputs.UBUNTU_CODE }} == '22.04'
+    uses: zhuoqiw/docker-build-push/.github/workflows/main.yml@master
+    with:
+      UBUNTU_CODE: '22.04'
+      PLATFORMS: ${{ inputs.PLATFORMS }}
+      IMAGE_NAME: ${{ github.repository }}
+      IMAGE_TAG: ${{ inputs.IMAGE_TAG }}
     secrets: inherit
