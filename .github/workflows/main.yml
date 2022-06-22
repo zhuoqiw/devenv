@@ -27,7 +27,7 @@ on:
 jobs:
   build-20.04:
     if: ${{ inputs.UBUNTU_CODE }} == '20.04'
-    uses: zhuoqiw/docker-build-push/blob/master/.github/workflows/main.yml@master
+    uses: zhuoqiw/docker-build-push/.github/workflows/main.yml@master
     with:
       UBUNTU_CODE: '20.04'
       UBUNTU_CODE_NAME: 'focal'
