@@ -22,11 +22,6 @@ on:
         - 'linux/amd64,linux/arm64'
         - 'linux/amd64'
         - 'linux/arm64'
-      image_tag:
-        description: 'Image tag'
-        required: true
-        default: 'latest'
-        type: string
 
 # For more details, see https://github.com/docker/build-push-action
 jobs:
@@ -34,7 +29,5 @@ jobs:
     uses: zhuoqiw/docker-build-push/.github/workflows/main.yml@master
     with:
       ubuntu_code: ${{ inputs.ubuntu_code }}
-      image_name: ${{ github.repository }}
-      image_tag: ${{ inputs.image_tag }}
       platforms: ${{ inputs.platforms }}
     secrets: inherit
