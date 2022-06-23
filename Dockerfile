@@ -1,6 +1,6 @@
-ARG ubuntu_version
+ARG UBUNTU_VERSION
 
-FROM ubuntu:${ubuntu_version:-latest}
+FROM ubuntu:${UBUNTU_VERSION:-latest}
 
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get -y install --no-install-recommends \
