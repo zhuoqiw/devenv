@@ -1,4 +1,6 @@
-FROM ubuntu:22.04
+ARG ubuntu_version
+
+FROM ubuntu:${ubuntu_version:-latest}
 
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get -y install --no-install-recommends \
