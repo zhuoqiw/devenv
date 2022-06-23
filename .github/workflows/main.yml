@@ -1,5 +1,5 @@
 # For more details, see https://docs.github.com/en/actions
-name: docker build ${{ github.repository }}
+name: docker build
 
 # Controls when the workflow will run
 on:
