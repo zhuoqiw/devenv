@@ -26,7 +26,7 @@ on:
 # For more details, see https://github.com/docker/build-push-action
 jobs:
   build:
-    name: ${{ github.repository}}
+    name: ${{ github.repository }}
     uses: zhuoqiw/docker-build-push/.github/workflows/main.yml@master
     with:
       ubuntu_code: ${{ inputs.ubuntu_code }}
