@@ -21,4 +21,3 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && rm -rf /var/lib/apt/lists/* ./tiscamera.deb
 
 # RUN git clone -c http.sslverify=false https://github.com/
-
