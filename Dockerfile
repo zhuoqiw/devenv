@@ -1,23 +1,16 @@
 ARG UBUNTU_VERSION
+ARG ROS_DISTRO
 
-FROM zhuoqiw/ros-tis:1.0.0-${UBUNTU_VERSION} AS tis
+FROM zhuoqiw/ros-pylon:6.2.0-${UBUNTU_VERSION} AS pylon
 
-FROM ubuntu:${UBUNTU_VERSION}
+FROM ros:${ROS_DISTRO}
 
-COPY --from=tis /tiscamera.deb tiscamera.deb
+COPY --from=pylon /setup /
+RUN ldconfig
 
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get -y install --no-install-recommends \
     nano \
-    lsb-release \
-    build-essential \
-    gdb \
-    cmake \
-    python3 \
-    python3-dev \
-    python3-gi \
-    git \
-    ./tiscamera.deb \
-    && rm -rf /var/lib/apt/lists/* ./tiscamera.deb
+    && rm -rf /var/lib/apt/lists/*
 
 # RUN git clone -c http.sslverify=false https://github.com/
